@@ -12,7 +12,8 @@ public class iniciar : MonoBehaviour
         
     }
      public void Play(){
-        SceneManager.LoadScene("fase");
+        //PlayerPrefs.DeleteKey("record");
+        SceneManager.LoadScene("tutorial");
 
 
     }
@@ -22,12 +23,21 @@ public class iniciar : MonoBehaviour
     public void StartMenu(){
         SceneManager.LoadScene("menu");
     }
+    public void fase(){
+        SceneManager.LoadScene("fase");
+    }
 
     // Update is called once per frame
     void Update()
     {
        if(SceneManager.GetActiveScene().name == "vitoria"){
                 PlayerPrefs.DeleteKey("record");
+        }
+         if(SceneManager.GetActiveScene().name == "tutorial"){
+            if(Input.GetMouseButtonDown(0)){
+                fase();
+
+            }
         }
         
        
