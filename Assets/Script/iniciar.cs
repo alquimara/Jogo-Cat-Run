@@ -11,30 +11,27 @@ public class iniciar : MonoBehaviour
         
         
     }
+     public void Play(){
+        SceneManager.LoadScene("fase");
+
+
+    }
+    public void Exit(){
+        Application.Quit();
+    }
+    public void StartMenu(){
+        SceneManager.LoadScene("menu");
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if(SceneManager.GetActiveScene().name == "menu" || SceneManager.GetActiveScene().name == "gameover" ||
-        SceneManager.GetActiveScene().name == "vitoria")
-        {
-            if(Input.GetMouseButtonDown(0)){
-                 SceneManager.LoadScene("fase");
-                
-            }
-
-            if(SceneManager.GetActiveScene().name == "vitoria"){
+       if(SceneManager.GetActiveScene().name == "vitoria"){
                 PlayerPrefs.DeleteKey("record");
-            }
         }
-       
-        }
-    
-   
-        
-        
         
        
-        
-    
+    }
+
+           
 }
