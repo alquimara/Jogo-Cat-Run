@@ -9,6 +9,7 @@ public class movimentacao : MonoBehaviour
     private float velocidade;
     public bool flipx;
     private SpriteRenderer spriteRenderer;
+    
 
 
     // Start is called before the first frame update

@@ -11,9 +11,13 @@ public class pontuacao : MonoBehaviour
     public static int record;
     public Text textoScore;
     public Text textoRecord;
+    public Text nomejogador;
+    public static Text nome;
+  
     // Start is called before the first frame update
     void Start()
     {
+    
         PlayerPrefs.DeleteKey("record");
         score = 0;
         if(PlayerPrefs.HasKey("record")){
@@ -28,6 +32,19 @@ public class pontuacao : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        for(var i = 0; i<iniciar.jogadores.Count; i++){
+             print(iniciar.jogadores[i]);
+            nomejogador.text = iniciar.jogadores[i];
+
+            
+
+        }
+      
+
+        
+        //nomejogador.text = iniciar.jogadordigitado;
+    
 
         textoScore.text = score.ToString();
         textoRecord.text = record.ToString();
