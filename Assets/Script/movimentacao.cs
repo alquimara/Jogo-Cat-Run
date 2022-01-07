@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class movimentacao : MonoBehaviour
 {
+    public static movimentacao intance;
     private Rigidbody2D personagemRB;
     private float velocidade;
     public bool flipx;
@@ -24,6 +25,7 @@ public class movimentacao : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
+        //admob.instance.RequestBanner();
     if(Input.GetMouseButtonDown(0)){
         velocidade = velocidade * -1;
          flipx = !flipx;
@@ -35,9 +37,26 @@ public class movimentacao : MonoBehaviour
     
     
     }
+
+    public void GamerOver(){
+        SceneManager.LoadScene("gameover");
+    }
     void OnCollisionEnter2D(Collision2D colisao){
         if(colisao.gameObject.CompareTag("espinho")){
-            SceneManager.LoadScene("gameover");
+           
+            admob.instance.morte++;
+            if(admob.instance.morte >=3){
+                Time.timeScale = 0;
+                AudioListener.pause = true;
+                admob.instance.morte = 0;
+                admob.instance.ShowBanner();
+            }
+            else{
+                AudioListener.pause = false;
+                 GamerOver();
+            }
+           
+            
             
            
         }

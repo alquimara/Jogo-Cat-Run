@@ -49,9 +49,10 @@ public class pontuacao : MonoBehaviour
         textoScore.text = score.ToString();
         textoRecord.text = record.ToString();
         
+        
     
         
-        if(score>9){
+        if(score>10){
             paredeespinhodireita.SetActive(true);
 
         }
@@ -60,7 +61,7 @@ public class pontuacao : MonoBehaviour
 
         }
         if(score >30){
-            espinho.espinhos = Random.Range(1f, 5f);
+            espinho.espinhos = Random.Range(1f, 7f);
 
         }
 

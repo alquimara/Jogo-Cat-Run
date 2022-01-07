@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class iniciar : MonoBehaviour
 {
-    public Text nomejogadordigitado;
+    //public Text nomejogadordigitado;
  
-    public  static string jogadordigitado;
+   // public  static string jogadordigitado;
     public static List<string> jogadores;
     // Start is called before the first frame update
     void Start()
@@ -38,7 +38,8 @@ public class iniciar : MonoBehaviour
     }
      public void Play(){
         //PlayerPrefs.DeleteKey("record");
-        jogadordigitado = nomejogadordigitado.text;
+        //jogadordigitado = nomejogadordigitado.text;
+        /*
         jogadores.Add(jogadordigitado);
         foreach(string j in jogadores){
            if(PlayerPrefs.HasKey(j)){
@@ -58,7 +59,7 @@ public class iniciar : MonoBehaviour
         
         //PlayerPrefs.SetString("jogador",jogadordigitado);
         
-        
+        */
         SceneManager.LoadScene("tutorial");
 
 
@@ -70,7 +71,11 @@ public class iniciar : MonoBehaviour
         SceneManager.LoadScene("menu");
     }
     public void fase(){
+        AudioListener.pause = false;
+        Time.timeScale = 1;
         SceneManager.LoadScene("fase");
+        
+        
     }
 
     // Update is called once per frame
